@@ -7,7 +7,7 @@ package prueba_proyecto;
 
 /**
  *
- * @author Sara
+ * @author valeria en la jungla
  */
 public class personas {
     System.out.println("Roberto malparido");
