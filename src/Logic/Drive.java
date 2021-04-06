@@ -15,8 +15,7 @@ public class Drive {
    private String car;
    private String qual;
    private String pyment;
-   //se puede editar
-   
+ 
    public Drive() {
     }
     //Constructor
