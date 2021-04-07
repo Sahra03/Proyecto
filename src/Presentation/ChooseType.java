@@ -6,10 +6,12 @@
 package Presentation;
 
 import Logica.DoubleLinkedCircularList;
+import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.awt.Image;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.UIManager;
 
 /**
  *
@@ -53,13 +55,13 @@ public class ChooseType extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(500, 700));
         setMinimumSize(new java.awt.Dimension(500, 700));
+        setResizable(false);
 
         panelMain.setMaximumSize(new java.awt.Dimension(500, 700));
         panelMain.setMinimumSize(new java.awt.Dimension(500, 700));
         panelMain.setPreferredSize(new java.awt.Dimension(500, 700));
         panelMain.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         labelNext.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 labelNextMousePressed(evt);
@@ -67,7 +69,6 @@ public class ChooseType extends javax.swing.JFrame {
         });
         panelMain.add(labelNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 250, 500));
 
-        labelPrevious.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         labelPrevious.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 labelPreviousMousePressed(evt);
@@ -163,20 +164,11 @@ public class ChooseType extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ChooseType.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ChooseType.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ChooseType.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ChooseType.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+            UIManager.setLookAndFeel(new FlatCyanLightIJTheme());
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
         //</editor-fold>
 
