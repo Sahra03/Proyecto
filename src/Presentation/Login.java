@@ -106,9 +106,9 @@ public class Login extends javax.swing.JFrame {
                 JB_beforeActionPerformed(evt);
             }
         });
-        getContentPane().add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+        getContentPane().add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
-        fl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo5.png"))); // NOI18N
+        fl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_login.png"))); // NOI18N
         getContentPane().add(fl_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 390));
 
         pack();

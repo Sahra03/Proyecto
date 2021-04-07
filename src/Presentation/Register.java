@@ -73,7 +73,7 @@ public class Register extends javax.swing.JFrame {
                 JB_beforeActionPerformed(evt);
             }
         });
-        getContentPane().add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, 54));
+        getContentPane().add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, 54));
 
         JB_registrarse.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         JB_registrarse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_register1.png"))); // NOI18N
@@ -90,7 +90,7 @@ public class Register extends javax.swing.JFrame {
                 JB_registrarseActionPerformed(evt);
             }
         });
-        getContentPane().add(JB_registrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, -1, -1));
+        getContentPane().add(JB_registrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, -1, -1));
         getContentPane().add(jtext_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 179, -1));
 
         jLabel6.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
@@ -99,7 +99,7 @@ public class Register extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
         jLabel3.setText("tarjeta");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, -1));
         getContentPane().add(jtext_card, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 179, -1));
 
         buttonGroup.add(RB_o);
@@ -108,7 +108,7 @@ public class Register extends javax.swing.JFrame {
 
         buttonGroup.add(RB_h);
         RB_h.setText("hombre");
-        getContentPane().add(RB_h, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
+        getContentPane().add(RB_h, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
 
         buttonGroup.add(RB_m);
         RB_m.setText("mujer");
@@ -133,19 +133,19 @@ public class Register extends javax.swing.JFrame {
                 jpassfield_passActionPerformed(evt);
             }
         });
-        getContentPane().add(jpassfield_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 179, -1));
-        getContentPane().add(jtext_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 179, -1));
+        getContentPane().add(jpassfield_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 179, -1));
+        getContentPane().add(jtext_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 179, -1));
 
         jLabel2.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
         jLabel2.setText("Usuario");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
         jLabel7.setText("Contraseña");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
 
-        jl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo8.png"))); // NOI18N
-        getContentPane().add(jl_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 480, 500));
+        jl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_register.png"))); // NOI18N
+        getContentPane().add(jl_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
