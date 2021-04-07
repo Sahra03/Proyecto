@@ -10,14 +10,16 @@ package LOGIC;
  * @author Sara
  */
 public class Drive {
+
     //Attributes
-  private String name;
-   private String car;
-   private String qual;
-   private String pyment;
- 
-   public Drive() {
+    private String name;
+    private String car;
+    private String qual;
+    private String pyment;
+
+    public Drive() {
     }
+
     //Constructor
     public Drive(String name1, String car, String qual, String pyment) {
         this.name = name1;
@@ -25,6 +27,7 @@ public class Drive {
         this.qual = qual;
         this.pyment = pyment;
     }
+
     //Get and set
     public String getName() {
         return name;
@@ -58,6 +61,4 @@ public class Drive {
         this.pyment = pyment;
     }
 
-   
-  
 }
