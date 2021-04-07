@@ -11,14 +11,8 @@ package Presentation;
  */
 import Logic.Users;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
-
-import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialPalenightContrastIJTheme;
-
-
-
 import java.util.LinkedList;
 import javax.swing.UIManager;
-
 
 public class Start extends javax.swing.JFrame {
 
@@ -35,7 +29,7 @@ public class Start extends javax.swing.JFrame {
     public Start(LinkedList<Users> listUsers) {
         initComponents();
         setLocationRelativeTo(null);
-        this.Users_o=listUsers;
+        this.Users_o = listUsers;
     }
 
     /**
@@ -115,7 +109,7 @@ public class Start extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_LOGINActionPerformed
 
     private void JB_LOGINMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_LOGINMouseClicked
-       
+
     }//GEN-LAST:event_JB_LOGINMouseClicked
 
     /**
