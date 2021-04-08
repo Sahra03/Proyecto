@@ -51,9 +51,9 @@ public class ChooseType extends javax.swing.JFrame {
         labelNext = new javax.swing.JLabel();
         labelPrevious = new javax.swing.JLabel();
         labelUberTypesImages = new javax.swing.JLabel();
+        jl_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(500, 700));
         setMinimumSize(new java.awt.Dimension(500, 700));
         setResizable(false);
 
@@ -82,6 +82,9 @@ public class ChooseType extends javax.swing.JFrame {
         labelUberTypesImages.setMinimumSize(new java.awt.Dimension(500, 500));
         labelUberTypesImages.setPreferredSize(new java.awt.Dimension(500, 500));
         panelMain.add(labelUberTypesImages, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
+
+        jl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_ubers.png"))); // NOI18N
+        panelMain.add(jl_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,6 +184,7 @@ public class ChooseType extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jl_fondo;
     private javax.swing.JLabel labelNext;
     private javax.swing.JLabel labelPrevious;
     private javax.swing.JLabel labelUberTypesImages;
