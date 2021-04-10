@@ -5,17 +5,24 @@
  */
 package Presentation;
 
+import java.util.LinkedList;
+import java.util.Random;
+import Logic.Drive;
 /**
  *
  * @author Sara
  */
 public class User_Window extends javax.swing.JFrame {
-
+    //Save Drivers Users 
+    LinkedList<Drive> list_driver = new LinkedList<>();
     /**
      * Creates new form User_Window
      */
     public User_Window() {
         initComponents();
+        setLocationRelativeTo(null);
+        add_drivers();
+        change_driver();
     }
 
     /**
@@ -27,22 +34,119 @@ public class User_Window extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Panel_information_driver = new javax.swing.JPanel();
+        JL_name_view = new javax.swing.JLabel();
+        JL_car_view = new javax.swing.JLabel();
+        JL_qual_view = new javax.swing.JLabel();
+        JL_qual = new javax.swing.JLabel();
+        JL_car = new javax.swing.JLabel();
+        JL_name = new javax.swing.JLabel();
+        img_driver = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Panel_information_driver.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        JL_name_view.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        JL_name_view.setText("Nombre de conductor");
+
+        JL_car_view.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        JL_car_view.setText("Marca del carro");
+
+        JL_qual_view.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        JL_qual_view.setText("Calificación");
+
+        JL_qual.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        JL_qual.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        JL_car.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        JL_car.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        JL_name.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        JL_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout Panel_information_driverLayout = new javax.swing.GroupLayout(Panel_information_driver);
+        Panel_information_driver.setLayout(Panel_information_driverLayout);
+        Panel_information_driverLayout.setHorizontalGroup(
+            Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_information_driverLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JL_name_view)
+                    .addComponent(JL_name, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_information_driverLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(JL_car, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JL_qual, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(20, Short.MAX_VALUE))
+                    .addGroup(Panel_information_driverLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(JL_car_view)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JL_qual_view, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))))
+        );
+        Panel_information_driverLayout.setVerticalGroup(
+            Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_information_driverLayout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JL_name_view)
+                    .addComponent(JL_car_view)
+                    .addComponent(JL_qual_view))
+                .addGroup(Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JL_car, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JL_qual, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JL_name, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        img_driver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        img_driver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/driver.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 706, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(img_driver, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Panel_information_driver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(434, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(img_driver, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Panel_information_driver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void add_drivers(){
+        Drive add_drive1=new Drive("Eduardo","Nissan Tiida", "4,9","efectivo");
+        Drive add_drive2=new Drive("Mónica","Chevrolet Spark", "5,0","Tarjeta");
+        Drive add_drive3=new Drive("Ana","Toyota Corolla", "4,78","Tarjeta");
+       
+        list_driver.add(add_drive1);
+        list_driver.add(add_drive2);
+        list_driver.add(add_drive3);
+    }
+    private void change_driver(){
+        Random r=new Random();
+        int num_a=r.nextInt(3)+1;
+        for (int i = 0; i < num_a; i++) {
+            JL_name.setText(list_driver.get(i).getName());
+            JL_car.setText(list_driver.get(i).getCar());
+            JL_qual.setText(list_driver.get(i).getQual());
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -79,5 +183,13 @@ public class User_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JL_car;
+    private javax.swing.JLabel JL_car_view;
+    private javax.swing.JLabel JL_name;
+    private javax.swing.JLabel JL_name_view;
+    private javax.swing.JLabel JL_qual;
+    private javax.swing.JLabel JL_qual_view;
+    private javax.swing.JPanel Panel_information_driver;
+    private javax.swing.JLabel img_driver;
     // End of variables declaration//GEN-END:variables
 }

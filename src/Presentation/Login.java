@@ -140,25 +140,38 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_beforeActionPerformed
 
     private void enter() {
-      
-        if (jtext_user.getText().equals("admin") && jpassfield_pass.getText().equals("098")) {
-            Admin_Window enter = new Admin_Window();
-            enter.setVisible(true);
-            this.setVisible(false);
-        } else if (jtext_user.getText().equals("") || jpassfield_pass.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "ingresar los datos solicitados");
-        } else{
-            for (int i = 0; i < this.Users_obj.size(); i++) {
-                
-                if (jtext_user.getText().equals(this.Users_obj.get(i).getUser()) && jpassfield_pass.getText().equals(this.Users_obj.get(i).getPass())) {
-                    Admin_Window enter = new Admin_Window();
-                    enter.setVisible(true);
-                    this.setVisible(false);
-                }else {
-                    JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
+        //Usuario administrado
+        try {
+            if (jtext_user.getText().equals("admin") && jpassfield_pass.getText().equals("098")) {
+                Admin_Window enter = new Admin_Window();
+                enter.setVisible(true);
+                this.setVisible(false);
+            } else if (jtext_user.getText().equals("") || jpassfield_pass.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "ingresar los datos solicitados");
+            } //Usuario cliente
+            else {
+                for (int i = 0; i < this.Users_obj.size(); i++) {
+
+                    if (jtext_user.getText().equals(this.Users_obj.get(i).getUser()) && jpassfield_pass.getText().equals(this.Users_obj.get(i).getPass())) {
+                        User_Window enter = new User_Window();
+                        enter.setVisible(true);
+                        this.setVisible(false);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
+                        cls();
+                    }
                 }
+
             }
+        } catch (NullPointerException ex) {
+            JOptionPane.showMessageDialog(null, "No existen usuarios registrados");
+            cls();
         }
+    }
+    //clean the screen
+    private void cls() {
+        jtext_user.setText("");
+        jpassfield_pass.setText("");
     }
 
     /**
