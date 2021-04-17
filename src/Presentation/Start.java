@@ -49,6 +49,9 @@ public class Start extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(396, 522));
+        setMinimumSize(new java.awt.Dimension(396, 522));
+        setPreferredSize(new java.awt.Dimension(396, 522));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

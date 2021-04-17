@@ -8,13 +8,16 @@ package Presentation;
 import java.util.LinkedList;
 import java.util.Random;
 import Logic.Drive;
+
 /**
  *
  * @author Sara
  */
 public class User_Window extends javax.swing.JFrame {
+
     //Save Drivers Users 
     LinkedList<Drive> list_driver = new LinkedList<>();
+
     /**
      * Creates new form User_Window
      */
@@ -111,42 +114,49 @@ public class User_Window extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(44, 44, 44)
                 .addComponent(img_driver, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Panel_information_driver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(434, Short.MAX_VALUE)
+                .addContainerGap(396, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(img_driver, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Panel_information_driver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(15, 15, 15))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void add_drivers(){
-        Drive add_drive1=new Drive("Eduardo","Nissan Tiida", "4,9","efectivo");
-        Drive add_drive2=new Drive("Mónica","Chevrolet Spark", "5,0","Tarjeta");
-        Drive add_drive3=new Drive("Ana","Toyota Corolla", "4,78","Tarjeta");
-       
+    private void add_drivers() {
+        
+        Drive add_drive1 = new Drive("Eduardo", "Nissan Tiida", "4,9", "efectivo");
+        Drive add_drive2 = new Drive("Mónica", "Chevrolet Spark", "5,0", "Tarjeta");
+        Drive add_drive3 = new Drive("Ana", "Toyota Corolla", "4,78", "Tarjeta");
+
         list_driver.add(add_drive1);
         list_driver.add(add_drive2);
         list_driver.add(add_drive3);
+        
     }
-    private void change_driver(){
-        Random r=new Random();
-        int num_a=r.nextInt(3)+1;
+
+    private void change_driver() {
+
+        Random r = new Random();
+        int num_a = r.nextInt(3) + 1;
+        
         for (int i = 0; i < num_a; i++) {
             JL_name.setText(list_driver.get(i).getName());
             JL_car.setText(list_driver.get(i).getCar());
             JL_qual.setText(list_driver.get(i).getQual());
         }
+        
     }
+
     /**
      * @param args the command line arguments
      */
