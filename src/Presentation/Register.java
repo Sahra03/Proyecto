@@ -94,24 +94,24 @@ public class Register extends javax.swing.JFrame {
         getContentPane().add(jtext_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 179, -1));
 
         jLabel6.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        jLabel6.setText("tel");
+        jLabel6.setText("Tel:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        jLabel3.setText("tarjeta");
+        jLabel3.setText("Tarjeta:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, -1));
         getContentPane().add(jtext_card, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 179, -1));
 
         buttonGroup.add(RB_o);
-        RB_o.setText("otro");
+        RB_o.setText("Otro");
         getContentPane().add(RB_o, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, -1));
 
         buttonGroup.add(RB_h);
-        RB_h.setText("hombre");
+        RB_h.setText("Hombre");
         getContentPane().add(RB_h, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
 
         buttonGroup.add(RB_m);
-        RB_m.setText("mujer");
+        RB_m.setText("Mujer");
         RB_m.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RB_mActionPerformed(evt);
@@ -120,11 +120,11 @@ public class Register extends javax.swing.JFrame {
         getContentPane().add(RB_m, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        jLabel4.setText("edad");
+        jLabel4.setText("Edad:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        jLabel5.setText("genero");
+        jLabel5.setText("Genero:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
         getContentPane().add(jtext_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 179, -1));
 
@@ -137,11 +137,11 @@ public class Register extends javax.swing.JFrame {
         getContentPane().add(jtext_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 179, -1));
 
         jLabel2.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        jLabel2.setText("Usuario");
+        jLabel2.setText("Usuario:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        jLabel7.setText("Contraseña");
+        jLabel7.setText("Contraseña:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
 
         jl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_register.png"))); // NOI18N
@@ -166,6 +166,7 @@ public class Register extends javax.swing.JFrame {
         Start before = new Start(list_users);
         before.setVisible(true);
         this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_JB_beforeActionPerformed
 
     private void RB_mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RB_mActionPerformed
@@ -204,11 +205,11 @@ public class Register extends javax.swing.JFrame {
 //save radio button option in variable option_gen
     private void option_gender() {
         if (RB_m.isSelected()) {
-            option_gen = "mujer";
+            option_gen = "Mujer";
         } else if (RB_h.isSelected()) {
-            option_gen = "hombre";
+            option_gen = "Hombre";
         } else if (RB_o.isSelected()) {
-            option_gen = "otro";
+            option_gen = "Otro";
         }
 
     }

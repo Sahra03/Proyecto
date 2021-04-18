@@ -147,7 +147,7 @@ public class Login extends javax.swing.JFrame {
                 enter.setVisible(true);
                 this.setVisible(false);
             } else if (jtext_user.getText().equals("") || jpassfield_pass.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "ingresar los datos solicitados");
+                JOptionPane.showMessageDialog(null, "Ingresar los datos solicitados");
             } //Usuario cliente
             else {
                 for (int i = 0; i < this.Users_obj.size(); i++) {
@@ -168,6 +168,7 @@ public class Login extends javax.swing.JFrame {
             cls();
         }
     }
+
     //clean the screen
     private void cls() {
         jtext_user.setText("");
