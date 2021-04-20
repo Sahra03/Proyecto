@@ -30,6 +30,7 @@ public class Admin_Window extends javax.swing.JFrame {
     private int iVertex;
     private GrafoListaAdyacencia graphListA = new GrafoListaAdyacencia();
     private String tempString = null;
+    private GraphVertex tempVertex = null;
 
     /**
      * Creates new form Routes
@@ -120,6 +121,7 @@ public class Admin_Window extends javax.swing.JFrame {
                 }
 
                 iV++;
+
             }
 
         }
@@ -156,12 +158,13 @@ public class Admin_Window extends javax.swing.JFrame {
                     if (new Rectangle(vertex.getX() - vertex.diameter / 2, vertex.getY() - vertex.diameter / 2, vertex.diameter, vertex.diameter).contains(evt.getPoint())) {
 
                         if (this.p1 == null) {
-                            
+
                             this.p1 = new Point(vertex.getX(), vertex.getY());
                             this.tempString = vertex.getName();
+                            this.tempVertex = vertex;
                             System.out.println(this.p1.getX() + " " + this.p1.getY());
                             System.out.println(this.tempString);
-                            
+
                         } else {
 
                             this.p2 = new Point(vertex.getX(), vertex.getY());
@@ -179,7 +182,7 @@ public class Admin_Window extends javax.swing.JFrame {
                                     }
 
                                     float weight = Float.parseFloat(temp);
-                                    this.listGraphEdge.add(new GraphEdge(p1.x, p2.x, p1.y, p2.y, weight));
+                                    this.listGraphEdge.add(new GraphEdge(p1.x, p2.x, p1.y, p2.y, weight, vertex, this.moveVertex));
                                     System.out.println();
                                     System.out.println(vertex.getName());
                                     this.graphListA.addEdgeNWeight(this.tempString, vertex.getName(), weight);
@@ -188,6 +191,7 @@ public class Admin_Window extends javax.swing.JFrame {
                                     this.p1 = null;
                                     this.p2 = null;
                                     this.tempString = null;
+                                    this.tempVertex = null;
                                     centinel = false;
 
                                     System.out.println(this.graphListA.toString());
@@ -227,14 +231,14 @@ public class Admin_Window extends javax.swing.JFrame {
             for (GraphEdge edge : listGraphEdge) {
 
                 if (new Rectangle(edge.getX1() - GraphVertex.diameter / 2, edge.getY1() - GraphVertex.diameter / 2, GraphVertex.diameter, GraphVertex.diameter).contains(evt.getPoint())) {
-                    this.listGraphEdge.set(iE, new GraphEdge(evt.getX(), edge.getX2(), evt.getY(), edge.getY2(), edge.getWeight()));
+                    this.listGraphEdge.set(iE, new GraphEdge(evt.getX(), edge.getX2(), evt.getY(), edge.getY2(), edge.getWeight(), edge.getStart(), edge.getEnd()));
                 } else if (new Rectangle(edge.getX2() - GraphVertex.diameter / 2, edge.getY2() - GraphVertex.diameter / 2, GraphVertex.diameter, GraphVertex.diameter).contains(evt.getPoint())) {
-                    this.listGraphEdge.set(iE, new GraphEdge(edge.getX1(), evt.getX(), edge.getY1(), evt.getY(), edge.getWeight()));
-
+                    this.listGraphEdge.set(iE, new GraphEdge(edge.getX1(), evt.getX(), edge.getY1(), evt.getY(), edge.getWeight(), edge.getStart(), edge.getEnd()));
                 }
-            }
 
-            iE++;
+                iE++;
+
+            }
 
         }
 
