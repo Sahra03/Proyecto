@@ -44,7 +44,7 @@ public class GraphEdge {
 
     public void paint(Graphics g) {
 
-        g.setColor(new Color(137, 6, 253));
+        g.setColor(new Color(43, 175, 208));
         g.drawLine(x1, y1, x2, y2);
 
         if (this.x1 > this.x2 && this.y1 > this.y2) {

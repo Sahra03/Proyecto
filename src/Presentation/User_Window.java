@@ -8,6 +8,8 @@ package Presentation;
 import java.util.LinkedList;
 import java.util.Random;
 import Logic.Drive;
+import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
+import javax.swing.UIManager;
 
 /**
  *
@@ -167,20 +169,11 @@ public class User_Window extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(User_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(User_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(User_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(User_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+            UIManager.setLookAndFeel(new FlatCyanLightIJTheme());
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
         //</editor-fold>
 

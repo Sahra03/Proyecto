@@ -24,11 +24,13 @@ public class Start extends javax.swing.JFrame {
     public Start() {
         initComponents();
         setLocationRelativeTo(null);
+        jl_fondo.requestFocus();
     }
 
     public Start(LinkedList<Users> listUsers) {
         initComponents();
         setLocationRelativeTo(null);
+        jl_fondo.requestFocus();
         this.Users_o = listUsers;
     }
 
