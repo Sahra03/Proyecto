@@ -51,16 +51,19 @@ public class Admin_Window extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        image = new javax.swing.JLabel();
         panelCanvas = new javax.swing.JPanel();
+        JB_before = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 700));
         setMinimumSize(new java.awt.Dimension(1000, 700));
-        setPreferredSize(new java.awt.Dimension(1000, 700));
         setResizable(false);
+
+        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_admin.png"))); // NOI18N
 
         panelCanvas.setMaximumSize(new java.awt.Dimension(1000, 700));
         panelCanvas.setMinimumSize(new java.awt.Dimension(1000, 700));
+        panelCanvas.setOpaque(false);
         panelCanvas.setPreferredSize(new java.awt.Dimension(1000, 700));
         panelCanvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -79,15 +82,34 @@ public class Admin_Window extends javax.swing.JFrame {
             }
         });
 
+        JB_before.setFont(new java.awt.Font("Rockwell", 1, 12)); // NOI18N
+        JB_before.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_regresar.png"))); // NOI18N
+        JB_before.setText("Regresar");
+        JB_before.setContentAreaFilled(false);
+        JB_before.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        JB_before.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_regresar2.png"))); // NOI18N
+        JB_before.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        JB_before.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_beforeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelCanvasLayout = new javax.swing.GroupLayout(panelCanvas);
         panelCanvas.setLayout(panelCanvasLayout);
         panelCanvasLayout.setHorizontalGroup(
             panelCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGroup(panelCanvasLayout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(JB_before)
+                .addContainerGap(831, Short.MAX_VALUE))
         );
         panelCanvasLayout.setVerticalGroup(
             panelCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCanvasLayout.createSequentialGroup()
+                .addContainerGap(611, Short.MAX_VALUE)
+                .addComponent(JB_before)
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,10 +117,14 @@ public class Admin_Window extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelCanvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(image, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelCanvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -246,6 +272,12 @@ public class Admin_Window extends javax.swing.JFrame {
 
     }//GEN-LAST:event_panelCanvasMouseDragged
 
+    private void JB_beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_beforeActionPerformed
+        Start before = new Start();
+        before.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_JB_beforeActionPerformed
+
     @Override
     public void paint(Graphics g) {
 
@@ -300,6 +332,8 @@ public class Admin_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JB_before;
+    private javax.swing.JLabel image;
     private javax.swing.JPanel panelCanvas;
     // End of variables declaration//GEN-END:variables
 }
