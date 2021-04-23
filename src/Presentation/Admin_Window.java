@@ -210,9 +210,9 @@ public class Admin_Window extends javax.swing.JFrame {
                                     }
 
                                     float weight = Float.parseFloat(temp);
-                                    this.listGraphEdge.add(new GraphEdge(p1.x, p2.x, p1.y, p2.y, weight, vertex, this.moveVertex));
-                                    System.out.println();
-                                    System.out.println(vertex.getName());
+                                    this.listGraphEdge.add(new GraphEdge(p1.x, p2.x, p1.y, p2.y, weight, this.tempVertex, vertex));
+                                    System.out.println(this.tempString);
+                                    System.out.println(this.graphListA.vertexExists(this.tempString));
                                     this.graphListA.addEdgeNWeight(this.tempString, vertex.getName(), weight);
                                     repaint();
 
