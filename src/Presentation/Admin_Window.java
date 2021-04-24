@@ -102,16 +102,16 @@ public class Admin_Window extends javax.swing.JFrame {
         panelCanvasLayout.setHorizontalGroup(
             panelCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCanvasLayout.createSequentialGroup()
-                .addGap(82, 82, 82)
+                .addGap(76, 76, 76)
                 .addComponent(JB_before)
-                .addContainerGap(831, Short.MAX_VALUE))
+                .addContainerGap(837, Short.MAX_VALUE))
         );
         panelCanvasLayout.setVerticalGroup(
             panelCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCanvasLayout.createSequentialGroup()
-                .addContainerGap(611, Short.MAX_VALUE)
+                .addContainerGap(609, Short.MAX_VALUE)
                 .addComponent(JB_before)
-                .addGap(30, 30, 30))
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
