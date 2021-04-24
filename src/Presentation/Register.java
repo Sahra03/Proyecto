@@ -176,19 +176,21 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_RB_mActionPerformed
 
     private void add_users() {
-
-        option_gender();
-        random_numbers_qual();
-        //clear the options marked in the radio buttons
-        buttonGroup.clearSelection();
-        //save user in list
-        Users prueba = new Users(jtext_user.getText(), jpassfield_pass.getText(), jtext_age.getText(), option_gen, jtext_card.getText(), jtext_phone.getText(), qual_user);
-        list_users.add(prueba);
-        cls();
-        //prueba 2
-        JOptionPane.showMessageDialog(null, "Usuario agregado");
+        if (jtext_user.getText().equals("") || jpassfield_pass.getText().equals("") || jtext_age.getText().equals("") || jtext_card.getText().equals("") || jtext_phone.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingresar los datos solicitados");
+        } else {
+            option_gender();
+            random_numbers_qual();
+            //clear the options marked in the radio buttons
+            buttonGroup.clearSelection();
+            //save user in list
+            Users prueba = new Users(jtext_user.getText(), jpassfield_pass.getText(), jtext_age.getText(), option_gen, jtext_card.getText(), jtext_phone.getText(), qual_user);
+            list_users.add(prueba);
+            cls();
+            //prueba 2
+            JOptionPane.showMessageDialog(null, "Usuario agregado");
+        }
     }
-
 //clean the screen
     public void cls() {
         jtext_user.setText("");
@@ -201,9 +203,8 @@ public class Register extends javax.swing.JFrame {
 //random numbers for user qualification
     private void random_numbers_qual() {
         Random r = new Random();
-        qual_user=r.nextInt(5)+1;
+        qual_user = r.nextInt(5) + 1;
     }
-
 //save radio button option in variable option_gen
     private void option_gender() {
         if (RB_m.isSelected()) {
