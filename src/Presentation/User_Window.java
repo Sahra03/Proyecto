@@ -19,7 +19,7 @@ public class User_Window extends javax.swing.JFrame {
 
     //Save Drivers Users 
     LinkedList<Drive> list_driver = new LinkedList<>();
-
+     
     /**
      * Creates new form User_Window
      */
@@ -39,103 +39,122 @@ public class User_Window extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Panel_information_driver = new javax.swing.JPanel();
-        JL_name_view = new javax.swing.JLabel();
-        JL_car_view = new javax.swing.JLabel();
-        JL_qual_view = new javax.swing.JLabel();
+        Panel_information_driver2 = new javax.swing.JPanel();
+        JL_name_view2 = new javax.swing.JLabel();
+        JL_car_view2 = new javax.swing.JLabel();
+        JL_qual_view2 = new javax.swing.JLabel();
         JL_qual = new javax.swing.JLabel();
         JL_car = new javax.swing.JLabel();
         JL_name = new javax.swing.JLabel();
         img_driver = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        button_user = new javax.swing.JButton();
+        image = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Panel_information_driver.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Panel_information_driver2.setBackground(new java.awt.Color(255, 255, 255));
+        Panel_information_driver2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 102, 255), null));
 
-        JL_name_view.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        JL_name_view.setText("Nombre de conductor");
+        JL_name_view2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        JL_name_view2.setForeground(new java.awt.Color(150, 57, 238));
+        JL_name_view2.setText("Nombre de conductor");
 
-        JL_car_view.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        JL_car_view.setText("Marca del carro");
+        JL_car_view2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        JL_car_view2.setForeground(new java.awt.Color(150, 57, 238));
+        JL_car_view2.setText("Marca del carro");
 
-        JL_qual_view.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        JL_qual_view.setText("Calificación");
+        JL_qual_view2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        JL_qual_view2.setForeground(new java.awt.Color(150, 57, 238));
+        JL_qual_view2.setText("Calificación");
 
-        JL_qual.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        JL_qual.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        JL_qual.setForeground(new java.awt.Color(74, 0, 153));
         JL_qual.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        JL_car.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        JL_car.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        JL_car.setForeground(new java.awt.Color(73, 0, 153));
         JL_car.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        JL_name.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        JL_name.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        JL_name.setForeground(new java.awt.Color(73, 0, 153));
         JL_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout Panel_information_driverLayout = new javax.swing.GroupLayout(Panel_information_driver);
-        Panel_information_driver.setLayout(Panel_information_driverLayout);
-        Panel_information_driverLayout.setHorizontalGroup(
-            Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_information_driverLayout.createSequentialGroup()
+        javax.swing.GroupLayout Panel_information_driver2Layout = new javax.swing.GroupLayout(Panel_information_driver2);
+        Panel_information_driver2.setLayout(Panel_information_driver2Layout);
+        Panel_information_driver2Layout.setHorizontalGroup(
+            Panel_information_driver2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_information_driver2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JL_name_view)
+                .addGroup(Panel_information_driver2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JL_name_view2)
                     .addComponent(JL_name, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Panel_information_driverLayout.createSequentialGroup()
+                .addGroup(Panel_information_driver2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_information_driver2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(JL_car, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(JL_qual, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(20, Short.MAX_VALUE))
-                    .addGroup(Panel_information_driverLayout.createSequentialGroup()
+                    .addGroup(Panel_information_driver2Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(JL_car_view)
+                        .addComponent(JL_car_view2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JL_qual_view, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JL_qual_view2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32))))
         );
-        Panel_information_driverLayout.setVerticalGroup(
-            Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_information_driverLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JL_name_view)
-                    .addComponent(JL_car_view)
-                    .addComponent(JL_qual_view))
-                .addGroup(Panel_information_driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Panel_information_driver2Layout.setVerticalGroup(
+            Panel_information_driver2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_information_driver2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Panel_information_driver2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JL_name_view2)
+                    .addComponent(JL_car_view2)
+                    .addComponent(JL_qual_view2))
+                .addGroup(Panel_information_driver2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JL_car, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JL_qual, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JL_name, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        getContentPane().add(Panel_information_driver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, -1, -1));
+
         img_driver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         img_driver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/driver.png"))); // NOI18N
+        getContentPane().add(img_driver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 87, 77));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(img_driver, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Panel_information_driver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(326, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(443, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(img_driver, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Panel_information_driver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
-        );
+        jPanel1.setBackground(new java.awt.Color(127, 0, 247));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        button_user.setFont(new java.awt.Font("Rockwell", 1, 12)); // NOI18N
+        button_user.setForeground(new java.awt.Color(73, 0, 153));
+        button_user.setText("Usuario");
+        button_user.setFocusable(false);
+        button_user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_userActionPerformed(evt);
+            }
+        });
+        jPanel1.add(button_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 962, -1));
+
+        image.setForeground(new java.awt.Color(155, 0, 233));
+        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_user.png"))); // NOI18N
+        getContentPane().add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, -9, 970, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_userActionPerformed
+        User_information view_info = new User_information();
+        view_info.setVisible(true);
+    }//GEN-LAST:event_button_userActionPerformed
     private void add_drivers() {
-        
+
         Drive add_drive1 = new Drive("Eduardo", "Nissan Tiida", "4,9", "efectivo");
         Drive add_drive2 = new Drive("Mónica", "Chevrolet Spark", "5,0", "Tarjeta");
         Drive add_drive3 = new Drive("Ana", "Toyota Corolla", "4,78", "Tarjeta");
@@ -143,20 +162,20 @@ public class User_Window extends javax.swing.JFrame {
         list_driver.add(add_drive1);
         list_driver.add(add_drive2);
         list_driver.add(add_drive3);
-        
+
     }
 
     private void change_driver() {
 
         Random r = new Random();
         int num_a = r.nextInt(3) + 1;
-        
+
         for (int i = 0; i < num_a; i++) {
             JL_name.setText(list_driver.get(i).getName());
             JL_car.setText(list_driver.get(i).getCar());
-            JL_qual.setText(list_driver.get(i).getQual());
+            JL_qual.setText(list_driver.get(i).getQual()); 
         }
-        
+
     }
 
     /**
@@ -187,12 +206,15 @@ public class User_Window extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JL_car;
-    private javax.swing.JLabel JL_car_view;
+    private javax.swing.JLabel JL_car_view2;
     private javax.swing.JLabel JL_name;
-    private javax.swing.JLabel JL_name_view;
+    private javax.swing.JLabel JL_name_view2;
     private javax.swing.JLabel JL_qual;
-    private javax.swing.JLabel JL_qual_view;
-    private javax.swing.JPanel Panel_information_driver;
+    private javax.swing.JLabel JL_qual_view2;
+    private javax.swing.JPanel Panel_information_driver2;
+    private javax.swing.JButton button_user;
+    private javax.swing.JLabel image;
     private javax.swing.JLabel img_driver;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,7 +24,7 @@ public class Register extends javax.swing.JFrame {
     Login login = new Login();
 
     public Register() {
-
+        
         initComponents();
         setLocationRelativeTo(null);
     }

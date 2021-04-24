@@ -108,8 +108,8 @@ public class Start extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_REGISTRARActionPerformed
 
     private void JB_LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_LOGINActionPerformed
-        Login register = new Login(Users_o);
-        register.setVisible(true);
+        Login login = new Login(Users_o);
+        login.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_JB_LOGINActionPerformed
 

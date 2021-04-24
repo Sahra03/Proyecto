@@ -119,7 +119,7 @@ public class Login extends javax.swing.JFrame {
     private void JB_LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_LOGINActionPerformed
 
         enter();
-
+        
     }//GEN-LAST:event_JB_LOGINActionPerformed
 
     private void jpassfield_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpassfield_passActionPerformed
