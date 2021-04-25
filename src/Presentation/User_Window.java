@@ -8,8 +8,12 @@ package Presentation;
 import java.util.LinkedList;
 import java.util.Random;
 import Logic.Drive;
+import Logic.GraphEdge;
+import Logic.GraphVertex;
 import Logic.Users;
+import Logica.GrafoListaAdyacencia;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
+import java.awt.Graphics;
 import javax.swing.UIManager;
 
 /**
@@ -21,30 +25,37 @@ public class User_Window extends javax.swing.JFrame {
     //Save Drivers Users 
     private LinkedList<Drive> list_driver = new LinkedList<>();
     private LinkedList<Users> users_o;
+    private LinkedList<GraphVertex> listGraphVertex = new LinkedList<>();
+    private LinkedList<GraphEdge> listGraphEdge = new LinkedList<>();
+    private GrafoListaAdyacencia graphListA = new GrafoListaAdyacencia();
     private Users user_info;
 
     /**
      * Creates new form User_Window
      */
     public User_Window() {
-        
+
         initComponents();
         setLocationRelativeTo(null);
         add_drivers();
         change_driver();
-        
+
     }
 
-    public User_Window(Users user, LinkedList<Users> users_o) {
-        
+    public User_Window(Users user, LinkedList<Users> users_o, LinkedList<GraphVertex> listGraphVertex, LinkedList<GraphEdge> listGraphEdge, GrafoListaAdyacencia graphListA) {
+
         this.user_info = user;
         this.users_o = users_o;
-        
+        this.listGraphVertex = listGraphVertex;
+        this.listGraphEdge = listGraphEdge;
+        this.graphListA = graphListA;
+
         initComponents();
         setLocationRelativeTo(null);
         add_drivers();
         change_driver();
-        
+        repaint();
+
     }
 
     /**
@@ -183,12 +194,13 @@ public class User_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_button_userActionPerformed
 
     private void JB_beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_beforeActionPerformed
-        
-        Login login = new Login(this.users_o);
+
+        Login login = new Login(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
         login.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_JB_beforeActionPerformed
+
     private void add_drivers() {
 
         Drive add_drive1 = new Drive("Eduardo", "Nissan Tiida", "4,9", "efectivo");
@@ -214,6 +226,21 @@ public class User_Window extends javax.swing.JFrame {
 
     }
 
+    @Override
+    public void paint(Graphics g) {
+
+        super.paint(g);
+
+        for (GraphVertex graphVertex : listGraphVertex) {
+            graphVertex.paint(g);
+        }
+
+        for (GraphEdge graphEdge : listGraphEdge) {
+            graphEdge.paint(g);
+        }
+
+    }
+    
     /**
      * @param args the command line arguments
      */

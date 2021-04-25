@@ -5,7 +5,10 @@
  */
 package Presentation;
 
+import Logic.GraphEdge;
+import Logic.GraphVertex;
 import Logic.Users;
+import Logica.GrafoListaAdyacencia;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
@@ -22,6 +25,9 @@ public class Login extends javax.swing.JFrame {
      */
     //Attributes
     private LinkedList<Users> users_o;
+    private LinkedList<GraphVertex> listGraphVertex = new LinkedList<>();
+    private LinkedList<GraphEdge> listGraphEdge = new LinkedList<>();
+    private GrafoListaAdyacencia graphListA = new GrafoListaAdyacencia();
 
     //Constructor
     public Login() {
@@ -30,10 +36,17 @@ public class Login extends javax.swing.JFrame {
 
     }
 
-    public Login(LinkedList<Users> users_o) {
+    public Login(LinkedList<Users> users_o, LinkedList<GraphVertex> listGraphVertex, LinkedList<GraphEdge> listGraphEdge, GrafoListaAdyacencia graphListA) {
+        
+        this.users_o = users_o;
+        this.listGraphVertex = listGraphVertex;
+        this.listGraphEdge = listGraphEdge;
+        this.graphListA = graphListA;
+        
         this.users_o = users_o;
         initComponents();
         setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -105,7 +118,7 @@ public class Login extends javax.swing.JFrame {
 
     private void JB_beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_beforeActionPerformed
 
-        Start before = new Start(this.users_o);
+        Start before = new Start(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
         before.setVisible(true);
         this.setVisible(false);
         this.dispose();
@@ -117,7 +130,7 @@ public class Login extends javax.swing.JFrame {
         try {
             if (jtext_user.getText().equals("admin") && jpassfield_pass.getText().equals("098")) {
 
-                Admin_Window enter = new Admin_Window();
+                Admin_Window enter = new Admin_Window(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
                 enter.setVisible(true);
                 this.setVisible(false);
 
@@ -143,7 +156,7 @@ public class Login extends javax.swing.JFrame {
 
                 if (sentinel) {
 
-                    User_Window enter = new User_Window(user_temp, this.users_o);
+                    User_Window enter = new User_Window(user_temp, this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
                     enter.setVisible(true);
                     this.setVisible(false);
                     this.dispose();

@@ -8,6 +8,7 @@ package Presentation;
 import Logic.GraphEdge;
 import Logic.GraphVertex;
 import static Logic.StringCapitalize.Convert;
+import Logic.Users;
 import Logica.GrafoListaAdyacencia;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.awt.Graphics;
@@ -24,6 +25,7 @@ import javax.swing.UIManager;
  */
 public class Admin_Window extends javax.swing.JFrame {
 
+    private LinkedList<Users> users_o;
     private LinkedList<GraphVertex> listGraphVertex = new LinkedList<>();
     private LinkedList<GraphEdge> listGraphEdge = new LinkedList<>();
     private Point p1 = null;
@@ -39,6 +41,18 @@ public class Admin_Window extends javax.swing.JFrame {
      */
     public Admin_Window() {
 
+        initComponents();
+        setLocationRelativeTo(null);
+
+    }
+    
+    public Admin_Window(LinkedList<Users> users_o, LinkedList<GraphVertex> listGraphVertex, LinkedList<GraphEdge> listGraphEdge, GrafoListaAdyacencia graphListA) {
+
+        this.users_o = users_o;
+        this.listGraphVertex = listGraphVertex;
+        this.listGraphEdge = listGraphEdge;
+        this.graphListA = graphListA;
+        
         initComponents();
         setLocationRelativeTo(null);
 
@@ -275,9 +289,11 @@ public class Admin_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_panelCanvasMouseDragged
 
     private void JB_beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_beforeActionPerformed
-        Start before = new Start();
+        
+        Start before = new Start(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
         before.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_JB_beforeActionPerformed
 
     @Override

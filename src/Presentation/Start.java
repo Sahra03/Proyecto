@@ -9,7 +9,10 @@ package Presentation;
  *
  * @author Sara
  */
+import Logic.GraphEdge;
+import Logic.GraphVertex;
 import Logic.Users;
+import Logica.GrafoListaAdyacencia;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.util.LinkedList;
 import javax.swing.UIManager;
@@ -20,6 +23,9 @@ public class Start extends javax.swing.JFrame {
      * Creates new form Start
      */
     private LinkedList<Users> users_o;
+    private LinkedList<GraphVertex> listGraphVertex = new LinkedList<>();
+    private LinkedList<GraphEdge> listGraphEdge = new LinkedList<>();
+    private GrafoListaAdyacencia graphListA = new GrafoListaAdyacencia();
 
     public Start() {
         
@@ -31,9 +37,13 @@ public class Start extends javax.swing.JFrame {
         
     }
 
-    public Start(LinkedList<Users> users_o) {
+    public Start(LinkedList<Users> users_o, LinkedList<GraphVertex> listGraphVertex, LinkedList<GraphEdge> listGraphEdge, GrafoListaAdyacencia graphListA) {
         
         this.users_o = users_o;
+        this.listGraphVertex = listGraphVertex;
+        this.listGraphEdge = listGraphEdge;
+        this.graphListA = graphListA;
+        
         initComponents();
         setLocationRelativeTo(null);
         jl_fondo.requestFocus();
@@ -93,7 +103,7 @@ public class Start extends javax.swing.JFrame {
 
     private void JB_checkInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_checkInActionPerformed
 
-        Register register = new Register(this.users_o);
+        Register register = new Register(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
         register.setVisible(true);
         this.setVisible(false);
 
@@ -101,7 +111,7 @@ public class Start extends javax.swing.JFrame {
 
     private void JB_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_loginActionPerformed
 
-        Login login = new Login(users_o);
+        Login login = new Login(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
         login.setVisible(true);
         this.setVisible(false);
 

@@ -5,9 +5,12 @@
  */
 package Presentation;
 
+import Logic.GraphEdge;
+import Logic.GraphVertex;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 import Logic.Users;
+import Logica.GrafoListaAdyacencia;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.util.Random;
 import javax.swing.UIManager;
@@ -19,6 +22,9 @@ import javax.swing.UIManager;
 public class Register extends javax.swing.JFrame {
 
     LinkedList<Users> users_o;
+    private LinkedList<GraphVertex> listGraphVertex = new LinkedList<>();
+    private LinkedList<GraphEdge> listGraphEdge = new LinkedList<>();
+    private GrafoListaAdyacencia graphListA = new GrafoListaAdyacencia();
     String option_gen;
     int qual_user;
 
@@ -29,7 +35,7 @@ public class Register extends javax.swing.JFrame {
 
     }
 
-    public Register(LinkedList<Users> users_o) {
+    public Register(LinkedList<Users> users_o, LinkedList<GraphVertex> listGraphVertex, LinkedList<GraphEdge> listGraphEdge, GrafoListaAdyacencia graphListA) {
 
         this.users_o = users_o;
 
@@ -151,7 +157,7 @@ public class Register extends javax.swing.JFrame {
 
     private void JB_beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_beforeActionPerformed
         
-        Start before = new Start(this.users_o);
+        Start before = new Start(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
         before.setVisible(true);
         this.setVisible(false);
         this.dispose();
