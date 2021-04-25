@@ -20,24 +20,31 @@ public class User_Window extends javax.swing.JFrame {
 
     //Save Drivers Users 
     private LinkedList<Drive> list_driver = new LinkedList<>();
+    private LinkedList<Users> users_o;
     private Users user_info;
 
     /**
      * Creates new form User_Window
      */
     public User_Window() {
+        
         initComponents();
         setLocationRelativeTo(null);
         add_drivers();
         change_driver();
+        
     }
 
-    public User_Window(Users user) {
+    public User_Window(Users user, LinkedList<Users> users_o) {
+        
+        this.user_info = user;
+        this.users_o = users_o;
+        
         initComponents();
         setLocationRelativeTo(null);
         add_drivers();
         change_driver();
-        this.user_info = user;
+        
     }
 
     /**
@@ -58,7 +65,8 @@ public class User_Window extends javax.swing.JFrame {
         JL_name = new javax.swing.JLabel();
         img_driver = new javax.swing.JLabel();
         button_user = new javax.swing.JButton();
-        image = new javax.swing.JLabel();
+        JB_before = new javax.swing.JButton();
+        JL_wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -145,9 +153,24 @@ public class User_Window extends javax.swing.JFrame {
         });
         getContentPane().add(button_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        image.setForeground(new java.awt.Color(155, 0, 233));
-        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_user.png"))); // NOI18N
-        getContentPane().add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, -9, 970, 570));
+        JB_before.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        JB_before.setForeground(new java.awt.Color(255, 255, 255));
+        JB_before.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_regresar.png"))); // NOI18N
+        JB_before.setText("Regresar");
+        JB_before.setContentAreaFilled(false);
+        JB_before.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        JB_before.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_regresar2.png"))); // NOI18N
+        JB_before.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        JB_before.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_beforeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 480, -1, -1));
+
+        JL_wallpaper.setForeground(new java.awt.Color(155, 0, 233));
+        JL_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_user.png"))); // NOI18N
+        getContentPane().add(JL_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, -9, 970, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -158,6 +181,14 @@ public class User_Window extends javax.swing.JFrame {
         view_info.setVisible(true);
 
     }//GEN-LAST:event_button_userActionPerformed
+
+    private void JB_beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_beforeActionPerformed
+        
+        Login login = new Login(this.users_o);
+        login.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_JB_beforeActionPerformed
     private void add_drivers() {
 
         Drive add_drive1 = new Drive("Eduardo", "Nissan Tiida", "4,9", "efectivo");
@@ -210,15 +241,16 @@ public class User_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JB_before;
     private javax.swing.JLabel JL_car;
     private javax.swing.JLabel JL_car_view2;
     private javax.swing.JLabel JL_name;
     private javax.swing.JLabel JL_name_view2;
     private javax.swing.JLabel JL_qual;
     private javax.swing.JLabel JL_qual_view2;
+    private javax.swing.JLabel JL_wallpaper;
     private javax.swing.JPanel Panel_information_driver2;
     private javax.swing.JButton button_user;
-    private javax.swing.JLabel image;
     private javax.swing.JLabel img_driver;
     // End of variables declaration//GEN-END:variables
 }

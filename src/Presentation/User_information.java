@@ -59,7 +59,7 @@ public class User_information extends javax.swing.JFrame {
         setTitle("Informacion");
         setFocusTraversalPolicyProvider(true);
         setLocationByPlatform(true);
-        setPreferredSize(new java.awt.Dimension(330, 410));
+        setPreferredSize(new java.awt.Dimension(330, 430));
         setResizable(false);
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -166,7 +166,7 @@ public class User_information extends javax.swing.JFrame {
         wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_information_user.png"))); // NOI18N
         wallpaper.setMaximumSize(new java.awt.Dimension(330, 410));
         wallpaper.setMinimumSize(new java.awt.Dimension(330, 410));
-        wallpaper.setPreferredSize(new java.awt.Dimension(330, 410));
+        wallpaper.setPreferredSize(new java.awt.Dimension(330, 430));
         getContentPane().add(wallpaper);
         wallpaper.setBounds(0, 0, 330, 430);
 

@@ -21,7 +21,7 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     //Attributes
-    private LinkedList<Users> Users_o;
+    private LinkedList<Users> users_o;
 
     //Constructor
     public Login() {
@@ -30,8 +30,8 @@ public class Login extends javax.swing.JFrame {
 
     }
 
-    public Login(LinkedList<Users> listUsers) {
-        this.Users_o = listUsers;
+    public Login(LinkedList<Users> users_o) {
+        this.users_o = users_o;
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -45,7 +45,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JB_LOGIN = new javax.swing.JButton();
+        JB_login = new javax.swing.JButton();
         jpassfield_pass = new javax.swing.JPasswordField();
         jtext_user = new javax.swing.JTextField();
         jl_name = new javax.swing.JLabel();
@@ -54,38 +54,21 @@ public class Login extends javax.swing.JFrame {
         fl_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Inicio de sesion");
+        setTitle("Inicio de sesión");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JB_LOGIN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_ingresar1.png"))); // NOI18N
-        JB_LOGIN.setContentAreaFilled(false);
-        JB_LOGIN.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_ingresar2.png"))); // NOI18N
-        JB_LOGIN.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_ingresar2.png"))); // NOI18N
-        JB_LOGIN.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JB_LOGINMouseClicked(evt);
-            }
-        });
-        JB_LOGIN.addActionListener(new java.awt.event.ActionListener() {
+        JB_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_ingresar1.png"))); // NOI18N
+        JB_login.setContentAreaFilled(false);
+        JB_login.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_ingresar2.png"))); // NOI18N
+        JB_login.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_ingresar2.png"))); // NOI18N
+        JB_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JB_LOGINActionPerformed(evt);
+                JB_loginActionPerformed(evt);
             }
         });
-        getContentPane().add(JB_LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 136, 75));
-
-        jpassfield_pass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jpassfield_passActionPerformed(evt);
-            }
-        });
+        getContentPane().add(JB_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 136, 75));
         getContentPane().add(jpassfield_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 121, -1));
-
-        jtext_user.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtext_userActionPerformed(evt);
-            }
-        });
         getContentPane().add(jtext_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 121, -1));
 
         jl_name.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
@@ -116,52 +99,60 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JB_LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_LOGINActionPerformed
-
+    private void JB_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_loginActionPerformed
         enter();
-
-    }//GEN-LAST:event_JB_LOGINActionPerformed
-
-    private void jpassfield_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpassfield_passActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpassfield_passActionPerformed
-
-    private void jtext_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtext_userActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtext_userActionPerformed
-
-    private void JB_LOGINMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_LOGINMouseClicked
-
-
-    }//GEN-LAST:event_JB_LOGINMouseClicked
+    }//GEN-LAST:event_JB_loginActionPerformed
 
     private void JB_beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_beforeActionPerformed
-        Start before = new Start();
+
+        Start before = new Start(this.users_o);
         before.setVisible(true);
         this.setVisible(false);
+        this.dispose();
+
     }//GEN-LAST:event_JB_beforeActionPerformed
 
     private void enter() {
         //Usuario administrado
         try {
             if (jtext_user.getText().equals("admin") && jpassfield_pass.getText().equals("098")) {
+
                 Admin_Window enter = new Admin_Window();
                 enter.setVisible(true);
                 this.setVisible(false);
+
             } else if (jtext_user.getText().equals("") || jpassfield_pass.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Ingresar los datos solicitados");
             } //Usuario cliente
             else {
-                for (int i = 0; i < this.Users_o.size(); i++) {
 
-                    if (jtext_user.getText().equals(this.Users_o.get(i).getUser()) && jpassfield_pass.getText().equals(this.Users_o.get(i).getPass())) {
-                        User_Window enter = new User_Window(this.Users_o.get(i));
-                        enter.setVisible(true);
-                        this.setVisible(false);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
-                        cls();
+                boolean sentinel = false;
+                Users user_temp = null;
+
+                for (int i = 0; i < this.users_o.size(); i++) {
+
+                    if (jtext_user.getText().equals(this.users_o.get(i).getUser()) && jpassfield_pass.getText().equals(this.users_o.get(i).getPass())) {
+                        
+                        sentinel = true;
+                        user_temp = this.users_o.get(i);
+                        break;
+                        
                     }
+
+                }
+
+                if (sentinel) {
+
+                    User_Window enter = new User_Window(user_temp, this.users_o);
+                    enter.setVisible(true);
+                    this.setVisible(false);
+                    this.dispose();
+
+                } else {
+
+                    JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
+                    cls();
+
                 }
 
             }
@@ -205,8 +196,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JB_LOGIN;
     private javax.swing.JButton JB_before;
+    private javax.swing.JButton JB_login;
     private javax.swing.JLabel fl_fondo;
     private javax.swing.JLabel jl_name;
     private javax.swing.JLabel jl_pass;
