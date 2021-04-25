@@ -8,6 +8,7 @@ package Presentation;
 import java.util.LinkedList;
 import java.util.Random;
 import Logic.Drive;
+import Logic.Users;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import javax.swing.UIManager;
 
@@ -18,8 +19,9 @@ import javax.swing.UIManager;
 public class User_Window extends javax.swing.JFrame {
 
     //Save Drivers Users 
-    LinkedList<Drive> list_driver = new LinkedList<>();
-     
+    private LinkedList<Drive> list_driver = new LinkedList<>();
+    private Users user_info;
+
     /**
      * Creates new form User_Window
      */
@@ -28,6 +30,14 @@ public class User_Window extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         add_drivers();
         change_driver();
+    }
+
+    public User_Window(Users user) {
+        initComponents();
+        setLocationRelativeTo(null);
+        add_drivers();
+        change_driver();
+        this.user_info = user;
     }
 
     /**
@@ -47,7 +57,6 @@ public class User_Window extends javax.swing.JFrame {
         JL_car = new javax.swing.JLabel();
         JL_name = new javax.swing.JLabel();
         img_driver = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         button_user = new javax.swing.JButton();
         image = new javax.swing.JLabel();
 
@@ -125,10 +134,6 @@ public class User_Window extends javax.swing.JFrame {
         img_driver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/driver.png"))); // NOI18N
         getContentPane().add(img_driver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 87, 77));
 
-        jPanel1.setBackground(new java.awt.Color(127, 0, 247));
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         button_user.setFont(new java.awt.Font("Rockwell", 1, 12)); // NOI18N
         button_user.setForeground(new java.awt.Color(73, 0, 153));
         button_user.setText("Usuario");
@@ -138,9 +143,7 @@ public class User_Window extends javax.swing.JFrame {
                 button_userActionPerformed(evt);
             }
         });
-        jPanel1.add(button_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 962, -1));
+        getContentPane().add(button_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         image.setForeground(new java.awt.Color(155, 0, 233));
         image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_user.png"))); // NOI18N
@@ -150,8 +153,10 @@ public class User_Window extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_userActionPerformed
-        User_information view_info = new User_information();
+
+        User_information view_info = new User_information(this.user_info);
         view_info.setVisible(true);
+
     }//GEN-LAST:event_button_userActionPerformed
     private void add_drivers() {
 
@@ -173,7 +178,7 @@ public class User_Window extends javax.swing.JFrame {
         for (int i = 0; i < num_a; i++) {
             JL_name.setText(list_driver.get(i).getName());
             JL_car.setText(list_driver.get(i).getCar());
-            JL_qual.setText(list_driver.get(i).getQual()); 
+            JL_qual.setText(list_driver.get(i).getQual());
         }
 
     }
@@ -215,6 +220,5 @@ public class User_Window extends javax.swing.JFrame {
     private javax.swing.JButton button_user;
     private javax.swing.JLabel image;
     private javax.swing.JLabel img_driver;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

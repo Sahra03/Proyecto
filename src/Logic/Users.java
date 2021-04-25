@@ -21,7 +21,6 @@ public class Users {
     private int qual;
    
     //Constructor
-
     public Users(String user, String pass, String age, String gender, String card, String phone,int qual) {
         this.user = user;
         this.pass = pass;
@@ -95,5 +94,4 @@ public class Users {
         this.qual = qual;
     }
     
-
 }

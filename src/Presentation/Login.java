@@ -21,7 +21,7 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     //Attributes
-    private LinkedList<Users> Users_obj;
+    private LinkedList<Users> Users_o;
 
     //Constructor
     public Login() {
@@ -31,7 +31,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     public Login(LinkedList<Users> listUsers) {
-        this.Users_obj = listUsers;
+        this.Users_o = listUsers;
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -119,7 +119,7 @@ public class Login extends javax.swing.JFrame {
     private void JB_LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_LOGINActionPerformed
 
         enter();
-        
+
     }//GEN-LAST:event_JB_LOGINActionPerformed
 
     private void jpassfield_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpassfield_passActionPerformed
@@ -152,10 +152,10 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Ingresar los datos solicitados");
             } //Usuario cliente
             else {
-                for (int i = 0; i < this.Users_obj.size(); i++) {
+                for (int i = 0; i < this.Users_o.size(); i++) {
 
-                    if (jtext_user.getText().equals(this.Users_obj.get(i).getUser()) && jpassfield_pass.getText().equals(this.Users_obj.get(i).getPass())) {
-                        User_Window enter = new User_Window();
+                    if (jtext_user.getText().equals(this.Users_o.get(i).getUser()) && jpassfield_pass.getText().equals(this.Users_o.get(i).getPass())) {
+                        User_Window enter = new User_Window(this.Users_o.get(i));
                         enter.setVisible(true);
                         this.setVisible(false);
                     } else {

@@ -203,7 +203,7 @@ public class Register extends javax.swing.JFrame {
 //random numbers for user qualification
     private void random_numbers_qual() {
         Random r = new Random();
-        qual_user = r.nextInt(5) + 1;
+        qual_user = r.nextInt(5-3) + 1;
     }
 //save radio button option in variable option_gen
     private void option_gender() {

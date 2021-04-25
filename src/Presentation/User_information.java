@@ -5,12 +5,17 @@
  */
 package Presentation;
 
+import Logic.Users;
+import javax.swing.JFrame;
 
 /**
  *
  * @author Sara
  */
 public class User_information extends javax.swing.JFrame {
+
+    //Attributes
+    Users user_info;
 
     /**
      * Creates new form User_information
@@ -21,7 +26,12 @@ public class User_information extends javax.swing.JFrame {
         information_user();
     }
 
- 
+    public User_information(Users user) {
+        initComponents();
+        setLocationRelativeTo(null);
+        this.user_info = user;
+        information_user();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,13 +48,18 @@ public class User_information extends javax.swing.JFrame {
         JL_qual = new javax.swing.JLabel();
         JB_before = new javax.swing.JButton();
         JL_user = new javax.swing.JLabel();
+        JL_user_name = new javax.swing.JLabel();
+        JL_user_age = new javax.swing.JLabel();
+        JL_user_gen = new javax.swing.JLabel();
+        JL_user_phone = new javax.swing.JLabel();
+        JL_user_qual = new javax.swing.JLabel();
         wallpaper = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Informacion");
-        setBackground(new java.awt.Color(0, 0, 204));
         setFocusTraversalPolicyProvider(true);
         setLocationByPlatform(true);
+        setPreferredSize(new java.awt.Dimension(330, 410));
         setResizable(false);
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -54,29 +69,34 @@ public class User_information extends javax.swing.JFrame {
                 formMouseExited(evt);
             }
         });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         JL_age.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        JL_age.setForeground(new java.awt.Color(73, 0, 153));
-        JL_age.setText("Edad:");
-        getContentPane().add(JL_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        JL_age.setForeground(new java.awt.Color(227, 203, 252));
+        JL_age.setText("Edad");
+        getContentPane().add(JL_age);
+        JL_age.setBounds(20, 80, 43, 22);
 
         JL_gen.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        JL_gen.setForeground(new java.awt.Color(73, 0, 153));
-        JL_gen.setText("Genero:");
-        getContentPane().add(JL_gen, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        JL_gen.setForeground(new java.awt.Color(227, 203, 252));
+        JL_gen.setText("Genero");
+        getContentPane().add(JL_gen);
+        JL_gen.setBounds(20, 140, 62, 22);
 
         JL_phone.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        JL_phone.setForeground(new java.awt.Color(73, 0, 153));
-        JL_phone.setText("Tel:");
-        getContentPane().add(JL_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        JL_phone.setForeground(new java.awt.Color(227, 203, 252));
+        JL_phone.setText("Tel");
+        getContentPane().add(JL_phone);
+        JL_phone.setBounds(20, 200, 25, 22);
 
         JL_qual.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        JL_qual.setForeground(new java.awt.Color(73, 0, 153));
+        JL_qual.setForeground(new java.awt.Color(227, 203, 252));
         JL_qual.setText("Calificacion");
-        getContentPane().add(JL_qual, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+        getContentPane().add(JL_qual);
+        JL_qual.setBounds(20, 260, 97, 22);
 
         JB_before.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        JB_before.setForeground(new java.awt.Color(255, 255, 255));
         JB_before.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_regresar.png"))); // NOI18N
         JB_before.setText("Regresar");
         JB_before.setContentAreaFilled(false);
@@ -88,15 +108,67 @@ public class User_information extends javax.swing.JFrame {
                 JB_beforeActionPerformed(evt);
             }
         });
-        getContentPane().add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
+        getContentPane().add(JB_before);
+        JB_before.setBounds(90, 310, 120, 80);
 
         JL_user.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        JL_user.setForeground(new java.awt.Color(73, 0, 153));
-        JL_user.setText("Usuario:");
-        getContentPane().add(JL_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        JL_user.setForeground(new java.awt.Color(227, 203, 252));
+        JL_user.setText("Usuario");
+        getContentPane().add(JL_user);
+        JL_user.setBounds(20, 20, 63, 22);
 
+        JL_user_name.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        JL_user_name.setForeground(new java.awt.Color(31, 0, 87));
+        JL_user_name.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        JL_user_name.setMaximumSize(new java.awt.Dimension(190, 20));
+        JL_user_name.setMinimumSize(new java.awt.Dimension(190, 20));
+        JL_user_name.setPreferredSize(new java.awt.Dimension(190, 20));
+        getContentPane().add(JL_user_name);
+        JL_user_name.setBounds(140, 20, 190, 20);
+
+        JL_user_age.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        JL_user_age.setForeground(new java.awt.Color(31, 0, 87));
+        JL_user_age.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        JL_user_age.setMaximumSize(new java.awt.Dimension(190, 20));
+        JL_user_age.setMinimumSize(new java.awt.Dimension(190, 20));
+        JL_user_age.setPreferredSize(new java.awt.Dimension(190, 20));
+        getContentPane().add(JL_user_age);
+        JL_user_age.setBounds(140, 80, 190, 20);
+
+        JL_user_gen.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        JL_user_gen.setForeground(new java.awt.Color(31, 0, 87));
+        JL_user_gen.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        JL_user_gen.setMaximumSize(new java.awt.Dimension(190, 20));
+        JL_user_gen.setMinimumSize(new java.awt.Dimension(190, 20));
+        JL_user_gen.setPreferredSize(new java.awt.Dimension(190, 20));
+        getContentPane().add(JL_user_gen);
+        JL_user_gen.setBounds(130, 140, 190, 20);
+
+        JL_user_phone.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        JL_user_phone.setForeground(new java.awt.Color(31, 0, 87));
+        JL_user_phone.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        JL_user_phone.setMaximumSize(new java.awt.Dimension(190, 20));
+        JL_user_phone.setMinimumSize(new java.awt.Dimension(190, 20));
+        JL_user_phone.setPreferredSize(new java.awt.Dimension(190, 20));
+        getContentPane().add(JL_user_phone);
+        JL_user_phone.setBounds(140, 200, 190, 20);
+
+        JL_user_qual.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        JL_user_qual.setForeground(new java.awt.Color(31, 0, 87));
+        JL_user_qual.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        JL_user_qual.setMaximumSize(new java.awt.Dimension(190, 20));
+        JL_user_qual.setMinimumSize(new java.awt.Dimension(190, 20));
+        JL_user_qual.setPreferredSize(new java.awt.Dimension(190, 20));
+        getContentPane().add(JL_user_qual);
+        JL_user_qual.setBounds(140, 260, 190, 20);
+
+        wallpaper.setBackground(new java.awt.Color(54, 0, 255));
         wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_information_user.png"))); // NOI18N
-        getContentPane().add(wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 250));
+        wallpaper.setMaximumSize(new java.awt.Dimension(330, 410));
+        wallpaper.setMinimumSize(new java.awt.Dimension(330, 410));
+        wallpaper.setPreferredSize(new java.awt.Dimension(330, 410));
+        getContentPane().add(wallpaper);
+        wallpaper.setBounds(0, 0, 330, 430);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,6 +186,12 @@ public class User_information extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_beforeActionPerformed
     private void information_user() {
         //show user information in labels
+        this.JL_user_name.setText(this.user_info.getUser());
+        this.JL_user_age.setText(this.user_info.getAge());
+        this.JL_user_gen.setText(this.user_info.getGender());
+        this.JL_user_phone.setText(this.user_info.getPhone());
+        this.JL_user_qual.setText(Integer.toString(this.user_info.getQual()));
+
     }
 
     /**
@@ -158,6 +236,11 @@ public class User_information extends javax.swing.JFrame {
     private javax.swing.JLabel JL_phone;
     private javax.swing.JLabel JL_qual;
     private javax.swing.JLabel JL_user;
+    private javax.swing.JLabel JL_user_age;
+    private javax.swing.JLabel JL_user_gen;
+    private javax.swing.JLabel JL_user_name;
+    private javax.swing.JLabel JL_user_phone;
+    private javax.swing.JLabel JL_user_qual;
     private javax.swing.JLabel wallpaper;
     // End of variables declaration//GEN-END:variables
 }
