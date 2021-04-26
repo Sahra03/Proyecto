@@ -184,7 +184,6 @@ public class Admin_Window extends javax.swing.JFrame {
 
                     this.listGraphVertex.add(new GraphVertex(evt.getX(), evt.getY(), name));
                     this.graphListA.addVertice(name);
-                    System.out.println(this.graphListA.toString());
 
                 }
 
@@ -225,8 +224,6 @@ public class Admin_Window extends javax.swing.JFrame {
 
                                     float weight = Float.parseFloat(temp);
                                     this.listGraphEdge.add(new GraphEdge(p1.x, p2.x, p1.y, p2.y, weight, this.tempVertex, vertex));
-                                    System.out.println(this.tempString);
-                                    System.out.println(this.graphListA.vertexExists(this.tempString));
                                     this.graphListA.addEdgeNWeight(this.tempString, vertex.getName(), weight);
                                     repaint();
 
@@ -290,9 +287,11 @@ public class Admin_Window extends javax.swing.JFrame {
 
     private void JB_beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_beforeActionPerformed
         
-        Start before = new Start(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
-        before.setVisible(true);
+        Login login = new Login(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
+        login.setVisible(true);
         this.setVisible(false);
+        this.dispose();
+        this.listGraphVertex.getFirst().getName();
         
     }//GEN-LAST:event_JB_beforeActionPerformed
 

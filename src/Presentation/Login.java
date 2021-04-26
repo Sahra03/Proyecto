@@ -33,7 +33,6 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
-
     }
 
     public Login(LinkedList<Users> users_o, LinkedList<GraphVertex> listGraphVertex, LinkedList<GraphEdge> listGraphEdge, GrafoListaAdyacencia graphListA) {
@@ -173,6 +172,7 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No existen usuarios registrados");
             cls();
         }
+        
     }
 
     //clean the screen

@@ -106,6 +106,7 @@ public class Start extends javax.swing.JFrame {
         Register register = new Register(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
         register.setVisible(true);
         this.setVisible(false);
+        this.dispose();
 
     }//GEN-LAST:event_JB_checkInActionPerformed
 
@@ -114,6 +115,7 @@ public class Start extends javax.swing.JFrame {
         Login login = new Login(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
         login.setVisible(true);
         this.setVisible(false);
+        this.dispose();
 
     }//GEN-LAST:event_JB_loginActionPerformed
 

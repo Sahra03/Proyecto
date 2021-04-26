@@ -207,6 +207,8 @@ public class Choose_Type extends javax.swing.JFrame {
             this.dispose();
         
         }
+        
+        this.listGraphVertex.getFirst().getName();
 
     }//GEN-LAST:event_JB_acceptActionPerformed
 

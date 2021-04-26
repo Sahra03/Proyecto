@@ -81,7 +81,7 @@ public class User_Window extends javax.swing.JFrame {
         button_user = new javax.swing.JButton();
         JB_before = new javax.swing.JButton();
         panelCanvas = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        JB_cancel = new javax.swing.JButton();
         JL_wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -204,16 +204,16 @@ public class User_Window extends javax.swing.JFrame {
         });
         panelCanvas.setLayout(null);
 
-        jButton2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-        jButton2.setText("Cancelar Viaje");
-        jButton2.setPreferredSize(new java.awt.Dimension(200, 35));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        JB_cancel.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        JB_cancel.setText("Cancelar Viaje");
+        JB_cancel.setPreferredSize(new java.awt.Dimension(200, 35));
+        JB_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                JB_cancelActionPerformed(evt);
             }
         });
-        panelCanvas.add(jButton2);
-        jButton2.setBounds(450, 500, 200, 32);
+        panelCanvas.add(JB_cancel);
+        JB_cancel.setBounds(450, 500, 200, 32);
 
         JL_wallpaper.setForeground(new java.awt.Color(155, 0, 233));
         JL_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_user.png"))); // NOI18N
@@ -247,39 +247,44 @@ public class User_Window extends javax.swing.JFrame {
     private void panelCanvasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelCanvasMouseClicked
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1 && evt.getClickCount() == 2) {
 
-                for (GraphVertex vertex : listGraphVertex) {
-                    if (new Rectangle(vertex.getX() - vertex.diameter / 2, vertex.getY() - vertex.diameter / 2, vertex.diameter, vertex.diameter).contains(evt.getPoint())) {
+            for (GraphVertex vertex : listGraphVertex) {
+                if (new Rectangle(vertex.getX() - vertex.diameter / 2, vertex.getY() - vertex.diameter / 2, vertex.diameter, vertex.diameter).contains(evt.getPoint())) {
 
-                        if (this.start == null) {
+                    if (this.start == null) {
 
-                            this.start = vertex;
-                            this.start.setSelected(true);
-                            repaint();
+                        this.start = vertex;
+                        this.start.setSelected(true);
+                        repaint();
 
-                        } else {
+                    } else {
 
-                            this.end = vertex;
-                            this.end.setSelected(true);
-                            repaint();
-
-                        }
+                        this.end = vertex;
+                        this.end.setSelected(true);
+                        repaint();
 
                     }
-                }
 
+                }
             }
+
+        }
     }//GEN-LAST:event_panelCanvasMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        this.start.setSelected(false);
-        this.end.setSelected(false);
-        repaint();
-        
-        this.start = null;
-        this.end = null;
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void JB_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_cancelActionPerformed
+
+        try {
+
+            this.start.setSelected(false);
+            this.end.setSelected(false);
+            repaint();
+
+            this.start = null;
+            this.end = null;
+
+        } catch (Exception e) {
+        }
+
+    }//GEN-LAST:event_JB_cancelActionPerformed
 
     private void add_drivers() {
 
@@ -320,7 +325,7 @@ public class User_Window extends javax.swing.JFrame {
         }
 
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -349,6 +354,7 @@ public class User_Window extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JB_before;
+    private javax.swing.JButton JB_cancel;
     private javax.swing.JLabel JL_car;
     private javax.swing.JLabel JL_car_view2;
     private javax.swing.JLabel JL_name;
@@ -359,7 +365,6 @@ public class User_Window extends javax.swing.JFrame {
     private javax.swing.JPanel Panel_information_driver2;
     private javax.swing.JButton button_user;
     private javax.swing.JLabel img_driver;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPanel panelCanvas;
     // End of variables declaration//GEN-END:variables
 }

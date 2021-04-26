@@ -38,6 +38,9 @@ public class Register extends javax.swing.JFrame {
     public Register(LinkedList<Users> users_o, LinkedList<GraphVertex> listGraphVertex, LinkedList<GraphEdge> listGraphEdge, GrafoListaAdyacencia graphListA) {
 
         this.users_o = users_o;
+        this.listGraphVertex = listGraphVertex;
+        this.listGraphEdge = listGraphEdge;
+        this.graphListA = graphListA;
 
         initComponents();
         setLocationRelativeTo(null);
