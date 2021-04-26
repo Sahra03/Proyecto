@@ -98,14 +98,18 @@ public class Choose_Type extends javax.swing.JFrame {
         panelMain.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JB_accept.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
-        JB_accept.setText("Aceptar");
+        JB_accept.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_morado.png"))); // NOI18N
+        JB_accept.setText(" Aceptar");
+        JB_accept.setContentAreaFilled(false);
         JB_accept.setPreferredSize(new java.awt.Dimension(150, 60));
+        JB_accept.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_naranja.png"))); // NOI18N
+        JB_accept.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_naranja.png"))); // NOI18N
         JB_accept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JB_acceptActionPerformed(evt);
             }
         });
-        panelMain.add(JB_accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 590, -1, -1));
+        panelMain.add(JB_accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 560, -1, -1));
 
         labelNext.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -134,6 +138,7 @@ public class Choose_Type extends javax.swing.JFrame {
         JB_before.setContentAreaFilled(false);
         JB_before.setFocusable(false);
         JB_before.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        JB_before.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/regresar_p2.png"))); // NOI18N
         JB_before.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/regresar_p2.png"))); // NOI18N
         JB_before.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         JB_before.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +146,7 @@ public class Choose_Type extends javax.swing.JFrame {
                 JB_beforeActionPerformed(evt);
             }
         });
-        panelMain.add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 630, -1, -1));
+        panelMain.add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 630, -1, -1));
 
         JL_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_ubers.png"))); // NOI18N
         panelMain.add(JL_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
