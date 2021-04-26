@@ -5,9 +5,14 @@
  */
 package Presentation;
 
+import Logic.GraphEdge;
+import Logic.GraphVertex;
+import Logic.Users;
 import Logica.DoubleLinkedCircularList;
+import Logica.GrafoListaAdyacencia;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.awt.Image;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -17,25 +22,53 @@ import javax.swing.UIManager;
  *
  * @author JD101
  */
-public class ChooseType extends javax.swing.JFrame {
-    
+public class Choose_Type extends javax.swing.JFrame {
+
     int arrow = 0;
     DoubleLinkedCircularList uberOptions = new DoubleLinkedCircularList();
+    private LinkedList<Users> users_o;
+    private LinkedList<GraphVertex> listGraphVertex = new LinkedList<>();
+    private LinkedList<GraphEdge> listGraphEdge = new LinkedList<>();
+    private GrafoListaAdyacencia graphListA = new GrafoListaAdyacencia();
+    private Users user_info;
 
     /**
      * Creates new form ChooseType
      */
-    public ChooseType() {
-        
+    public Choose_Type() {
+
         initComponents();
         setLocationRelativeTo(null);
-        
+
         this.uberOptions.add(new ImageIcon(getClass().getResource("/Images/UberTypes/UberComfort.png")).getImage().getScaledInstance(this.labelUberTypesImages.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
         this.uberOptions.add(new ImageIcon(getClass().getResource("/Images/UberTypes/UberEconomy.png")).getImage().getScaledInstance(this.labelUberTypesImages.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
         this.uberOptions.add(new ImageIcon(getClass().getResource("/Images/UberTypes/UberXL.png")).getImage().getScaledInstance(this.labelUberTypesImages.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
         this.uberOptions.add(new ImageIcon(getClass().getResource("/Images/UberTypes/UberYA.png")).getImage().getScaledInstance(this.labelUberTypesImages.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
         show(this.arrow);
-        
+
+        JL_wallpaper.requestFocus();
+
+    }
+
+    public Choose_Type(Users user, LinkedList<Users> users_o, LinkedList<GraphVertex> listGraphVertex, LinkedList<GraphEdge> listGraphEdge, GrafoListaAdyacencia graphListA) {
+
+        this.user_info = user;
+        this.users_o = users_o;
+        this.listGraphVertex = listGraphVertex;
+        this.listGraphEdge = listGraphEdge;
+        this.graphListA = graphListA;
+
+        initComponents();
+        setLocationRelativeTo(null);
+
+        this.uberOptions.add(new ImageIcon(getClass().getResource("/Images/UberTypes/UberComfort.png")).getImage().getScaledInstance(this.labelUberTypesImages.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
+        this.uberOptions.add(new ImageIcon(getClass().getResource("/Images/UberTypes/UberEconomy.png")).getImage().getScaledInstance(this.labelUberTypesImages.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
+        this.uberOptions.add(new ImageIcon(getClass().getResource("/Images/UberTypes/UberXL.png")).getImage().getScaledInstance(this.labelUberTypesImages.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
+        this.uberOptions.add(new ImageIcon(getClass().getResource("/Images/UberTypes/UberYA.png")).getImage().getScaledInstance(this.labelUberTypesImages.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
+        show(this.arrow);
+
+        JL_wallpaper.requestFocus();
+
     }
 
     /**
@@ -48,10 +81,11 @@ public class ChooseType extends javax.swing.JFrame {
     private void initComponents() {
 
         panelMain = new javax.swing.JPanel();
+        JB_accept = new javax.swing.JButton();
         labelNext = new javax.swing.JLabel();
         labelPrevious = new javax.swing.JLabel();
         labelUberTypesImages = new javax.swing.JLabel();
-        jl_fondo = new javax.swing.JLabel();
+        JL_wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 700));
@@ -61,6 +95,16 @@ public class ChooseType extends javax.swing.JFrame {
         panelMain.setMinimumSize(new java.awt.Dimension(500, 700));
         panelMain.setPreferredSize(new java.awt.Dimension(500, 700));
         panelMain.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JB_accept.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        JB_accept.setText("Aceptar");
+        JB_accept.setPreferredSize(new java.awt.Dimension(150, 60));
+        JB_accept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_acceptActionPerformed(evt);
+            }
+        });
+        panelMain.add(JB_accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 600, -1, -1));
 
         labelNext.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -83,8 +127,8 @@ public class ChooseType extends javax.swing.JFrame {
         labelUberTypesImages.setPreferredSize(new java.awt.Dimension(500, 500));
         panelMain.add(labelUberTypesImages, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
 
-        jl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_ubers.png"))); // NOI18N
-        panelMain.add(jl_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
+        JL_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_ubers.png"))); // NOI18N
+        panelMain.add(JL_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,62 +145,76 @@ public class ChooseType extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void labelNextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNextMousePressed
-        
+
         new Thread();
-        
+
         try {
             Thread.sleep(300);
         } catch (InterruptedException ex) {
-            Logger.getLogger(ChooseType.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Choose_Type.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         int positionX = this.labelUberTypesImages.getX();
-        
+
         if (positionX > -1) {
             Animacion.Animacion.mover_izquierda(500, 0, 1, 2, this.labelUberTypesImages);
         }
-        
+
         this.arrow++;
-        
+
         if (this.arrow >= this.uberOptions.getSize()) {
             this.arrow = 0;
         }
-        
+
         show(this.arrow);
-        
+
     }//GEN-LAST:event_labelNextMousePressed
 
     private void labelPreviousMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelPreviousMousePressed
-        
+
         new Thread();
-        
+
         try {
             Thread.sleep(300);
         } catch (InterruptedException ex) {
-            Logger.getLogger(ChooseType.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Choose_Type.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         int positionX = this.labelUberTypesImages.getX();
-        
+
         if (positionX > -1) {
             Animacion.Animacion.mover_derecha(-500, 0, 1, 2, this.labelUberTypesImages);
         }
-        
+
         this.arrow--;
-        
+
         if (this.arrow < 0) {
             this.arrow = this.uberOptions.getSize() - 1;
         }
-        
+
         show(this.arrow);
-        
+
     }//GEN-LAST:event_labelPreviousMousePressed
+
+    private void JB_acceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_acceptActionPerformed
+
+        if (this.user_info.getQual() < 4) {
+            System.out.println("Debido a la calificación no se pueden realiar viajes.");
+        } else {
+        
+            User_Window user_window = new User_Window(this.user_info, this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
+            user_window.setVisible(true);
+            this.dispose();
+        
+        }
+
+    }//GEN-LAST:event_JB_acceptActionPerformed
 
     public void show(int arrow) {
         Image image = (Image) this.uberOptions.index(arrow);
         this.labelUberTypesImages.setIcon(new ImageIcon(image));
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -178,13 +236,14 @@ public class ChooseType extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ChooseType().setVisible(true);
+                new Choose_Type().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jl_fondo;
+    private javax.swing.JButton JB_accept;
+    private javax.swing.JLabel JL_wallpaper;
     private javax.swing.JLabel labelNext;
     private javax.swing.JLabel labelPrevious;
     private javax.swing.JLabel labelUberTypesImages;

@@ -156,12 +156,12 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_checkInActionPerformed
 
     private void JB_beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_beforeActionPerformed
-        
+
         Start before = new Start(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
         before.setVisible(true);
         this.setVisible(false);
         this.dispose();
-        
+
     }//GEN-LAST:event_JB_beforeActionPerformed
 
     private void add_users() {
@@ -197,6 +197,7 @@ public class Register extends javax.swing.JFrame {
     private void random_numbers_qual() {
         Random r = new Random();
         qual_user = r.nextInt(5 - 3) + 1;
+        qual_user = 5;
     }
 
     //save radio button option in variable option_gen

@@ -14,10 +14,7 @@ import Logic.Users;
 import Logica.GrafoListaAdyacencia;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.awt.Graphics;
-import java.awt.HeadlessException;
-import java.awt.Point;
 import java.awt.Rectangle;
-import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -234,7 +231,7 @@ public class User_Window extends javax.swing.JFrame {
 
     private void button_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_userActionPerformed
 
-        User_information view_info = new User_information(this.user_info);
+        User_Information view_info = new User_Information(this.user_info);
         view_info.setVisible(true);
 
     }//GEN-LAST:event_button_userActionPerformed

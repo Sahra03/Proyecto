@@ -156,8 +156,8 @@ public class Login extends javax.swing.JFrame {
 
                 if (sentinel) {
 
-                    User_Window enter = new User_Window(user_temp, this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
-                    enter.setVisible(true);
+                    Choose_Type choose_type = new Choose_Type(user_temp, this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
+                    choose_type.setVisible(true);
                     this.setVisible(false);
                     this.dispose();
 
