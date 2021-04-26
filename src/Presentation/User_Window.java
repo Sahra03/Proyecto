@@ -79,15 +79,13 @@ public class User_Window extends javax.swing.JFrame {
         JL_name = new javax.swing.JLabel();
         img_driver = new javax.swing.JLabel();
         button_user = new javax.swing.JButton();
-        JB_before = new javax.swing.JButton();
         panelCanvas = new javax.swing.JPanel();
         JB_cancel = new javax.swing.JButton();
         JL_wallpaper = new javax.swing.JLabel();
+        JB_before = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 700));
         setMinimumSize(new java.awt.Dimension(1000, 700));
-        setPreferredSize(new java.awt.Dimension(1000, 700));
         setSize(new java.awt.Dimension(1000, 700));
         getContentPane().setLayout(null);
 
@@ -157,7 +155,7 @@ public class User_Window extends javax.swing.JFrame {
         );
 
         getContentPane().add(Panel_information_driver2);
-        Panel_information_driver2.setBounds(140, 590, 479, 55);
+        Panel_information_driver2.setBounds(140, 590, 481, 65);
 
         img_driver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         img_driver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/driver.png"))); // NOI18N
@@ -176,22 +174,6 @@ public class User_Window extends javax.swing.JFrame {
         });
         getContentPane().add(button_user);
         button_user.setBounds(0, 0, 90, 31);
-
-        JB_before.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-        JB_before.setForeground(new java.awt.Color(255, 255, 255));
-        JB_before.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_regresar.png"))); // NOI18N
-        JB_before.setText("Regresar");
-        JB_before.setContentAreaFilled(false);
-        JB_before.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        JB_before.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_regresar2.png"))); // NOI18N
-        JB_before.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        JB_before.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JB_beforeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JB_before);
-        JB_before.setBounds(850, 570, 92, 70);
 
         panelCanvas.setMaximumSize(new java.awt.Dimension(1000, 700));
         panelCanvas.setMinimumSize(new java.awt.Dimension(1000, 700));
@@ -219,6 +201,22 @@ public class User_Window extends javax.swing.JFrame {
         JL_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_user.png"))); // NOI18N
         panelCanvas.add(JL_wallpaper);
         JL_wallpaper.setBounds(0, 0, 1000, 700);
+
+        JB_before.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        JB_before.setForeground(new java.awt.Color(255, 255, 255));
+        JB_before.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_regresar.png"))); // NOI18N
+        JB_before.setText("Regresar");
+        JB_before.setContentAreaFilled(false);
+        JB_before.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        JB_before.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bt_regresar2.png"))); // NOI18N
+        JB_before.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        JB_before.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_beforeActionPerformed(evt);
+            }
+        });
+        panelCanvas.add(JB_before);
+        JB_before.setBounds(850, 600, 95, 63);
 
         getContentPane().add(panelCanvas);
         panelCanvas.setBounds(0, 0, 1000, 700);

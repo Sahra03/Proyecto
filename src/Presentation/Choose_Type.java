@@ -85,6 +85,7 @@ public class Choose_Type extends javax.swing.JFrame {
         labelNext = new javax.swing.JLabel();
         labelPrevious = new javax.swing.JLabel();
         labelUberTypesImages = new javax.swing.JLabel();
+        JB_before = new javax.swing.JButton();
         JL_wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -104,7 +105,7 @@ public class Choose_Type extends javax.swing.JFrame {
                 JB_acceptActionPerformed(evt);
             }
         });
-        panelMain.add(JB_accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 600, -1, -1));
+        panelMain.add(JB_accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 590, -1, -1));
 
         labelNext.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -126,6 +127,21 @@ public class Choose_Type extends javax.swing.JFrame {
         labelUberTypesImages.setMinimumSize(new java.awt.Dimension(500, 500));
         labelUberTypesImages.setPreferredSize(new java.awt.Dimension(500, 500));
         panelMain.add(labelUberTypesImages, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
+
+        JB_before.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        JB_before.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/regresar_p.png"))); // NOI18N
+        JB_before.setText("Regresar");
+        JB_before.setContentAreaFilled(false);
+        JB_before.setFocusable(false);
+        JB_before.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        JB_before.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/regresar_p2.png"))); // NOI18N
+        JB_before.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        JB_before.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_beforeActionPerformed(evt);
+            }
+        });
+        panelMain.add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 630, -1, -1));
 
         JL_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_ubers.png"))); // NOI18N
         panelMain.add(JL_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
@@ -212,6 +228,12 @@ public class Choose_Type extends javax.swing.JFrame {
 
     }//GEN-LAST:event_JB_acceptActionPerformed
 
+    private void JB_beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_beforeActionPerformed
+      Login before=new Login();
+      before.setVisible(true);
+      this.setVisible(false);
+    }//GEN-LAST:event_JB_beforeActionPerformed
+
     public void show(int arrow) {
         Image image = (Image) this.uberOptions.index(arrow);
         this.labelUberTypesImages.setIcon(new ImageIcon(image));
@@ -245,6 +267,7 @@ public class Choose_Type extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JB_accept;
+    private javax.swing.JButton JB_before;
     private javax.swing.JLabel JL_wallpaper;
     private javax.swing.JLabel labelNext;
     private javax.swing.JLabel labelPrevious;
