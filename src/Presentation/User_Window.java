@@ -14,6 +14,10 @@ import Logic.Users;
 import Logica.GrafoListaAdyacencia;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.awt.Graphics;
+import java.awt.HeadlessException;
+import java.awt.Point;
+import java.awt.Rectangle;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -28,6 +32,8 @@ public class User_Window extends javax.swing.JFrame {
     private LinkedList<GraphVertex> listGraphVertex = new LinkedList<>();
     private LinkedList<GraphEdge> listGraphEdge = new LinkedList<>();
     private GrafoListaAdyacencia graphListA = new GrafoListaAdyacencia();
+    private GraphVertex start = null;
+    private GraphVertex end;
     private Users user_info;
 
     /**
@@ -77,10 +83,16 @@ public class User_Window extends javax.swing.JFrame {
         img_driver = new javax.swing.JLabel();
         button_user = new javax.swing.JButton();
         JB_before = new javax.swing.JButton();
+        panelCanvas = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
         JL_wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setMaximumSize(new java.awt.Dimension(1000, 700));
+        setMinimumSize(new java.awt.Dimension(1000, 700));
+        setPreferredSize(new java.awt.Dimension(1000, 700));
+        setSize(new java.awt.Dimension(1000, 700));
+        getContentPane().setLayout(null);
 
         Panel_information_driver2.setBackground(new java.awt.Color(255, 255, 255));
         Panel_information_driver2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 102, 255), null));
@@ -147,22 +159,26 @@ public class User_Window extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Panel_information_driver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, -1, -1));
+        getContentPane().add(Panel_information_driver2);
+        Panel_information_driver2.setBounds(140, 590, 479, 55);
 
         img_driver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         img_driver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/driver.png"))); // NOI18N
-        getContentPane().add(img_driver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 87, 77));
+        getContentPane().add(img_driver);
+        img_driver.setBounds(40, 570, 87, 77);
 
         button_user.setFont(new java.awt.Font("Rockwell", 1, 12)); // NOI18N
         button_user.setForeground(new java.awt.Color(73, 0, 153));
         button_user.setText("Usuario");
         button_user.setFocusable(false);
+        button_user.setPreferredSize(new java.awt.Dimension(90, 31));
         button_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_userActionPerformed(evt);
             }
         });
-        getContentPane().add(button_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(button_user);
+        button_user.setBounds(0, 0, 90, 31);
 
         JB_before.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         JB_before.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,11 +193,41 @@ public class User_Window extends javax.swing.JFrame {
                 JB_beforeActionPerformed(evt);
             }
         });
-        getContentPane().add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 480, -1, -1));
+        getContentPane().add(JB_before);
+        JB_before.setBounds(850, 570, 92, 70);
+
+        panelCanvas.setMaximumSize(new java.awt.Dimension(1000, 700));
+        panelCanvas.setMinimumSize(new java.awt.Dimension(1000, 700));
+        panelCanvas.setOpaque(false);
+        panelCanvas.setPreferredSize(new java.awt.Dimension(1000, 700));
+        panelCanvas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelCanvasMouseClicked(evt);
+            }
+        });
+        panelCanvas.setLayout(null);
+
+        jButton2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        jButton2.setText("Cancelar Viaje");
+        jButton2.setPreferredSize(new java.awt.Dimension(200, 35));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        panelCanvas.add(jButton2);
+        jButton2.setBounds(450, 500, 200, 32);
 
         JL_wallpaper.setForeground(new java.awt.Color(155, 0, 233));
         JL_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_user.png"))); // NOI18N
-        getContentPane().add(JL_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, -9, 970, 570));
+        JL_wallpaper.setMaximumSize(new java.awt.Dimension(1000, 700));
+        JL_wallpaper.setMinimumSize(new java.awt.Dimension(1000, 700));
+        JL_wallpaper.setPreferredSize(new java.awt.Dimension(1000, 700));
+        panelCanvas.add(JL_wallpaper);
+        JL_wallpaper.setBounds(0, 0, 1000, 700);
+
+        getContentPane().add(panelCanvas);
+        panelCanvas.setBounds(0, 0, 1000, 700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -200,6 +246,43 @@ public class User_Window extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_JB_beforeActionPerformed
+
+    private void panelCanvasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelCanvasMouseClicked
+        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1 && evt.getClickCount() == 2) {
+
+                for (GraphVertex vertex : listGraphVertex) {
+                    if (new Rectangle(vertex.getX() - vertex.diameter / 2, vertex.getY() - vertex.diameter / 2, vertex.diameter, vertex.diameter).contains(evt.getPoint())) {
+
+                        if (this.start == null) {
+
+                            this.start = vertex;
+                            this.start.setSelected(true);
+                            repaint();
+
+                        } else {
+
+                            this.end = vertex;
+                            this.end.setSelected(true);
+                            repaint();
+
+                        }
+
+                    }
+                }
+
+            }
+    }//GEN-LAST:event_panelCanvasMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        this.start.setSelected(false);
+        this.end.setSelected(false);
+        repaint();
+        
+        this.start = null;
+        this.end = null;
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void add_drivers() {
 
@@ -279,5 +362,7 @@ public class User_Window extends javax.swing.JFrame {
     private javax.swing.JPanel Panel_information_driver2;
     private javax.swing.JButton button_user;
     private javax.swing.JLabel img_driver;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JPanel panelCanvas;
     // End of variables declaration//GEN-END:variables
 }
