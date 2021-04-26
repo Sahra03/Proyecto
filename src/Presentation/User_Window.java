@@ -217,9 +217,6 @@ public class User_Window extends javax.swing.JFrame {
 
         JL_wallpaper.setForeground(new java.awt.Color(155, 0, 233));
         JL_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_user.png"))); // NOI18N
-        JL_wallpaper.setMaximumSize(new java.awt.Dimension(1000, 700));
-        JL_wallpaper.setMinimumSize(new java.awt.Dimension(1000, 700));
-        JL_wallpaper.setPreferredSize(new java.awt.Dimension(1000, 700));
         panelCanvas.add(JL_wallpaper);
         JL_wallpaper.setBounds(0, 0, 1000, 700);
 
