@@ -59,6 +59,9 @@ public class User_Information extends javax.swing.JFrame {
         setTitle("Informacion");
         setFocusTraversalPolicyProvider(true);
         setLocationByPlatform(true);
+        setMaximumSize(new java.awt.Dimension(330, 430));
+        setMinimumSize(new java.awt.Dimension(330, 430));
+        setPreferredSize(new java.awt.Dimension(330, 430));
         setResizable(false);
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

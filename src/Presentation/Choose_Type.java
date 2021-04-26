@@ -16,6 +16,7 @@ import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -109,7 +110,7 @@ public class Choose_Type extends javax.swing.JFrame {
                 JB_acceptActionPerformed(evt);
             }
         });
-        panelMain.add(JB_accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 560, -1, -1));
+        panelMain.add(JB_accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, -1, -1));
 
         labelNext.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -146,7 +147,7 @@ public class Choose_Type extends javax.swing.JFrame {
                 JB_beforeActionPerformed(evt);
             }
         });
-        panelMain.add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 630, -1, -1));
+        panelMain.add(JB_before, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 620, -1, -1));
 
         JL_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_ubers.png"))); // NOI18N
         panelMain.add(JL_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
@@ -220,23 +221,26 @@ public class Choose_Type extends javax.swing.JFrame {
     private void JB_acceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_acceptActionPerformed
 
         if (this.user_info.getQual() < 4) {
-            System.out.println("Debido a la calificación no se pueden realiar viajes.");
+
+            JOptionPane.showMessageDialog(null, "No se pueden realizar viajes debido a que cuentas con una clificación muy baja.", "", JOptionPane.ERROR_MESSAGE);
+            Login login = new Login(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
+            login.setVisible(true);
+            this.dispose();
+
         } else {
-        
+
             User_Window user_window = new User_Window(this.user_info, this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
             user_window.setVisible(true);
             this.dispose();
-        
+
         }
-        
-        this.listGraphVertex.getFirst().getName();
 
     }//GEN-LAST:event_JB_acceptActionPerformed
 
     private void JB_beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_beforeActionPerformed
-      Login before=new Login();
-      before.setVisible(true);
-      this.setVisible(false);
+        Login login = new Login(this.users_o, this.listGraphVertex, this.listGraphEdge, this.graphListA);
+        login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_JB_beforeActionPerformed
 
     public void show(int arrow) {
